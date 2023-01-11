@@ -8,10 +8,7 @@ response = requests.get(url)
 
 # Check the status code of the response
 if response.status_code == 200:
-    # If the request is successful, get the content of the file
-    content = response.json()["content"]
-    # Decode the content from base64
-    source_code = content.encode("base64")
+    script_text = response.text
     # Print the source code
     print(source_code)
 else:
