@@ -11,7 +11,7 @@ if response.status_code == 200:
     # If the request is successful, get the content of the file
     content = response.json()["content"]
     # Decode the content from base64
-    source_code = content.decode("base64")
+    source_code = content.encode("base64")
     # Print the source code
     print(source_code)
 else:
