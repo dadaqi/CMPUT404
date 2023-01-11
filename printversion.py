@@ -10,7 +10,7 @@ response = requests.get(url)
 if response.status_code == 200:
     script_text = response.text
     # Print the source code
-    print(source_code)
+    print(script_text)
 else:
     # If the request is not successful, print an error message
     print("Failed to retrieve source code")
