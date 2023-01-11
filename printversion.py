@@ -21,11 +21,13 @@ script_url = "https://api.github.com/repos/dadaqi/CMPUT404/contents/printversion
 response = requests.get(script_url)
 
 if response.status_code == 200:
+    # If the request is successful, get the content of the file
+    content = response.json()["content"]
+    # Decode the content from base64
+    source_code = content.encode("base64")
     script_text = response.text
-    print(script_text)
-    with open("script.py", "w") as file:
-        file.write(script_text)
-
+    # Print the source code
+    print(source_code)
 
 import requests
 
